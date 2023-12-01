@@ -36,7 +36,8 @@
           "dependencies": {
             "AdventOfCode.Runner": {
               "target": "Package",
-              "version": "[1.0.3, )"
+              "version": "[1.0.3, )",
+              "generatePathProperty": true
             },
             "FSharp.Core": {
               "include": "Runtime, Compile, Build, Native, Analyzers, BuildTransitive",

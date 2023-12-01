@@ -14,5 +14,6 @@
   </ItemGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgFSharp_Core Condition=" '$(PkgFSharp_Core)' == '' ">/home/fnord/.nuget/packages/fsharp.core/6.0.7</PkgFSharp_Core>
+    <PkgAdventOfCode_Runner Condition=" '$(PkgAdventOfCode_Runner)' == '' ">/home/fnord/.nuget/packages/adventofcode.runner/1.0.3</PkgAdventOfCode_Runner>
   </PropertyGroup>
 </Project>
