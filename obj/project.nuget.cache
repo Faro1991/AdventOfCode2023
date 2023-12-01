@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "+C/Wm4ZIZU51QVT6BHUn6Yqzwiw6BrVYJ+lQ9bRrFRh+wv9r4gwnMxMe7bGg79dL49+5NS5976Dg4YhXB0vaAg==",
+  "success": true,
+  "projectFilePath": "/home/fnord/Documents/Code/AoC/AdventOfCode2023/AdventOfCode2023.fsproj",
+  "expectedPackageFiles": [
+    "/home/fnord/.nuget/packages/fsharp.core/6.0.7/fsharp.core.6.0.7.nupkg.sha512"
+  ],
+  "logs": []
+}
