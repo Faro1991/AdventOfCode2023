@@ -1,12 +1,37 @@
 namespace AoC
 
 open System
+open System.Text.RegularExpressions
 
 module Day1 =
 
     let extractNumbers (input : string) = 
         let ret = input |> Seq.filter (fun c -> c |> Char.IsDigit) |> Array.ofSeq |> String
         ret
+
+    let extractNumbersAndWords (input : string) =
+            let wordNumbers = [|"zero"; "one"; "two"; "three"; "four"; "five"; "six"; "seven"; "eight"; "nine"|]
+            let reg = "one|two|three|four|five|six|seven|eight|nine|0|1|2|3|4|5|6|7|8|9"
+            let rxMatches = Regex.Matches(input, reg)
+            let rxMatchesReverse = Regex.Matches(input, reg, RegexOptions.RightToLeft)
+            let res = seq {
+                for m in rxMatches do
+                    if (m.Value |> Seq.head) |> Char.IsDigit then
+                        m.Value
+                    else
+                        let number = wordNumbers |> Seq.findIndex (fun x -> x = m.Value)
+                        string number
+            }
+            let resReverse = seq {
+                for m in rxMatchesReverse do
+                    if (m.Value |> Seq.head) |> Char.IsDigit then
+                        m.Value
+                    else
+                        let number = wordNumbers |> Seq.findIndex (fun x -> x = m.Value)
+                        string number
+            }
+            let out = Seq.append res (resReverse |> Seq.rev)
+            out
 
     let takeFirstNumber (input : string) = (input |> extractNumbers) |> Seq.head
 
@@ -18,11 +43,32 @@ module Day1 =
         let calibVal = seq {firstNumber; lastNumber} |> Array.ofSeq |> String
         int calibVal
 
+    let takeFirstNumberAndWord (input : string) = (input |> extractNumbersAndWords) |> Seq.head
+
+    let takeLastNumberAndWord (input : string) = (input |> extractNumbersAndWords) |> Seq.last
+    
+    let buildNumbersAndWords (input : string) =
+        let firstNumber = input |> takeFirstNumberAndWord
+        let lastNumber = input |> takeLastNumberAndWord
+        let calibVal = [| firstNumber; lastNumber |] |> List.ofSeq |> string
+        let out = calibVal.Replace(";", "").Replace("[", "").Replace("]", "").Replace(" ", "") |> string
+        printfn "%s" out
+        int out
+
     let partOne (input : string) = 
         let lines = input.Split([|'\n'|], StringSplitOptions.RemoveEmptyEntries)
         let ret = seq {
             for line in lines do
                 (line |> buildNumbers)
+        }
+        let sum = ret |> Seq.sum
+        sum
+
+    let partTwo (input : string) =
+        let lines = input.Split([|'\n'|], StringSplitOptions.RemoveEmptyEntries)
+        let ret = seq {
+            for line in lines do
+                (line |> buildNumbersAndWords)
         }
         let sum = ret |> Seq.sum
         sum
