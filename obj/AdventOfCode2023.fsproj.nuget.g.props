@@ -12,7 +12,11 @@
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <SourceRoot Include="/home/fnord/.nuget/packages/" />
   </ItemGroup>
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)microsoft.diagnostics.tracing.traceevent/3.0.2/buildTransitive/Microsoft.Diagnostics.Tracing.TraceEvent.props" Condition="Exists('$(NuGetPackageRoot)microsoft.diagnostics.tracing.traceevent/3.0.2/buildTransitive/Microsoft.Diagnostics.Tracing.TraceEvent.props')" />
+  </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgMicrosoft_CodeAnalysis_Analyzers Condition=" '$(PkgMicrosoft_CodeAnalysis_Analyzers)' == '' ">/home/fnord/.nuget/packages/microsoft.codeanalysis.analyzers/3.3.3</PkgMicrosoft_CodeAnalysis_Analyzers>
     <PkgFSharp_Core Condition=" '$(PkgFSharp_Core)' == '' ">/home/fnord/.nuget/packages/fsharp.core/6.0.7</PkgFSharp_Core>
     <PkgAdventOfCode_Runner Condition=" '$(PkgAdventOfCode_Runner)' == '' ">/home/fnord/.nuget/packages/adventofcode.runner/1.0.3</PkgAdventOfCode_Runner>
   </PropertyGroup>
