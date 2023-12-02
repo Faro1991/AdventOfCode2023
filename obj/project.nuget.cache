@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "KZ3jwHwHBeNTW7IDUXYZhGjMTrzLNZttwjKie/A5DaKXrU8X2p7HvsH3hFGOac2GIbThesLD52bDRWIEuuvtKw==",
+  "dgSpecHash": "SB2j7gbLFUeiIi4dr44Ly+r3fLtkiEJMSPrGO72uhTdEmo2fDCUAaC1h7nas/qsB4stPYTWr/Us+A4zQCmOqHQ==",
   "success": true,
   "projectFilePath": "/home/fnord/Documents/Code/AoC/AdventOfCode2023/AdventOfCode2023.fsproj",
   "expectedPackageFiles": [

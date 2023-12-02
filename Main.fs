@@ -1,14 +1,17 @@
 ﻿namespace AoC
 open AoC.Day1
-open System.Text.RegularExpressions
+open BenchmarkDotNet.Running
 
-[<EntryPoint>]
-let main argv =
+module Main =
+    [<EntryPoint>]
+    let main argv =
 
-    let day1Input = System.IO.File.ReadAllText("Day1/Day1Input.txt")
+        let day1 = new Day1()
 
-    let day1part1 = day1Input |> Day1.partOne
-    printfn "%d" day1part1
+        let day1part1 = day1.partOne
 
-    let day1part2 = day1Input |> Day1.partTwo
-    printfn "%d" day1part2
+        let day1part2 = day1.partTwo
+
+        BenchmarkRunner.Run<Day1.Day1>() |> ignore
+
+        0

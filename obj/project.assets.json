@@ -2093,7 +2093,8 @@
           },
           "benchmarkdotnet": {
             "target": "Package",
-            "version": "[0.13.10, )"
+            "version": "[0.13.10, )",
+            "generatePathProperty": true
           }
         },
         "imports": [

@@ -49,3 +49,5 @@ bin
 token.txt
 
 Day*/Day*Input.txt
+
+BenchmarkDotNet.Artifacts/
